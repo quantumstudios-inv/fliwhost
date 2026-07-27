@@ -3,164 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowHosting — Hospedaje Minecraft Premium</title>
+    <title>FlowHosting — Hospedaje Profesional</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primario: '#7C3AED',
-                        primarioOscuro: '#6D28D9',
-                        acento: '#F59E0B',
-                        peligro: '#EF4444',
-                        fondo: '#0F0A1F',
-                        tarjeta: '#1E123B',
-                        borde: '#312450',
-                        textoClaro: '#E9D5FF',
+                        fondo: '#0B0B12',
+                        tarjeta: '#14141F',
+                        borde: '#232335',
+                        morado: '#7C3AED',
+                        dorado: '#FFD700',
+                        doradoOscuro: '#F5C518'
                     },
-                    fontFamily: {
-                        inter: ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'flotar': 'flotar 6s ease-in-out infinite',
-                        'brillo': 'brillo 2.5s ease-in-out infinite alternate',
-                        'pulsar': 'pulsar 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        flotar: {
-                            '0%, 100%': { transform: 'translateY(0px)' },
-                            '50%': { transform: 'translateY(-12px)' },
-                        },
-                        brillo: {
-                            '0%': { boxShadow: '0 0 15px rgba(124, 58, 237, 0.4)' },
-                            '100%': { boxShadow: '0 0 25px rgba(124, 58, 237, 0.7)' },
-                        }
-                    }
+                    fontFamily: { inter: ['Inter'] }
                 }
             }
         }
     </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .textoDegradado { background: linear-gradient(135deg, #E9D5FF 0%, #A78BFA 50%, #7C3AED 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
-            .fondoMosaico { background-image: radial-gradient(circle, rgba(124, 58, 237, 0.08) 1px, transparent 1px); background-size: 30px 30px; }
-            .tarjetaPlan { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 2px solid #312450; }
-            .tarjetaPlan:hover { transform: translateY(-10px); border-color: #7C3AED; box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2); }
-            .emojiGrande { font-size: 4rem; line-height: 1; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); }
-            .textoSombra { text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-            html { scroll-behavior: smooth; }
-        }
+    <style>
+        .texto-dorado { color: #FFD700; font-weight: 800; text-shadow: 0 0 10px rgba(255,215,0,.3); }
+        .tarjeta-plan { background: #14141F; border: 1px solid #232335; border-radius: 14px; transition: all .35s ease; }
+        .tarjeta-plan:hover { border-color: #FFD700; transform: translateY(-6px); box-shadow: 0 18px 35px rgba(0,0,0,.4); }
+        .destacado { border-color: #FFD700; box-shadow: 0 0 22px rgba(255,215,0,.18); }
+        .btn-morado { background: linear-gradient(135deg,#7C3AED,#5B21B6); transition:.3s; }
+        .btn-morado:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(124,58,237,.25); }
+        .btn-dorado { background: linear-gradient(135deg,#FFD700,#F5C518); color:#000; font-weight:700; transition:.3s; }
+        .btn-dorado:hover { transform: translateY(-2px); box-shadow: 0 8px 18px rgba(255,215,0,.25); }
+        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-fondo text-gray-200 font-inter fondoMosaico">
-    <!-- Navegación -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-fondo/90 backdrop-blur-md border-b border-borde">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
-                <a href="https://www.flowhosting.org" target="_blank" class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primario to-acento flex items-center justify-center shadow-lg">
-                        <i class="fa fa-cube text-white text-xl"></i>
-                    </div>
-                    <span class="text-xl font-bold tracking-tight">Flow<span class="text-primario">Hosting</span><span class="text-sm text-gray-500">.org</span></span>
-                </a>
+<body class="bg-fondo text-gray-200 font-inter">
 
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#inicio" class="hover:text-textoClaro transition-colors">Inicio</a>
-                    <a href="#planes" class="hover:text-textoClaro font-semibold transition-colors">Planes</a>
-                    <a href="#caracteristicas" class="hover:text-textoClaro transition-colors">Características</a>
-                    <a href="#faq" class="hover:text-textoClaro transition-colors">FAQ</a>
-                    <a href="#" class="px-5 py-2 bg-gradient-to-r from-primario to-primarioOscuro hover:from-primarioOscuro hover:to-primario rounded-lg transition-all shadow-lg shadow-primario/20">
-                        <i class="fa fa-user mr-2"></i>Ingresar
-                    </a>
-                </div>
+<!-- Navegación -->
+<nav class="fixed w-full bg-fondo/92 backdrop-blur-md border-b border-borde z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold"><span class="texto-dorado">Flow</span>Hosting</a>
+        <div class="hidden md:flex gap-8 items-center">
+            <a href="#inicio" class="hover:text-dorado transition-colors">Inicio</a>
+            <a href="#planes" class="hover:text-dorado transition-colors">Planes</a>
+            <a href="#caract" class="hover:text-dorado transition-colors">Características</a>
+            <a href="#" class="btn-morado px-5 py-2 rounded-lg font-semibold">Ingresar</a>
+        </div>
+    </div>
+</nav>
 
-                <button id="btnMenu" class="md:hidden text-xl">
-                    <i class="fa fa-bars"></i>
-                </button>
+<!-- Hero -->
+<section id="inicio" class="min-h-screen flex items-center justify-center pt-20 px-6 text-center bg-gradient-to-b from-morado/5 to-fondo">
+    <div class="max-w-3xl">
+        <h1 class="text-[clamp(2.4rem,5vw,4rem)] font-bold">Hospedaje de Minecraft <span class="texto-dorado">Alto Rendimiento</span></h1>
+        <p class="text-lg text-gray-400 mt-6">CPU por porcentaje real • Memoria DDR4 • Almacenamiento SSD • Protección DDoS</p>
+        <a href="#planes" class="btn-dorado inline-block mt-10 px-10 py-3 rounded-lg text-lg">Ver Planes</a>
+    </div>
+</section>
+
+<!-- Planes -->
+<section id="planes" class="py-24 px-6">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-4">Elige tu <span class="texto-dorado">Plan</span></h2>
+        <p class="text-center text-gray-400 mb-16">Todos optimizados para máxima estabilidad</p>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Zombie -->
+            <div class="tarjeta-plan p-8 text-center">
+                <h3 class="text-xl font-bold">Zombie</h3>
+                <p class="texto-dorado text-3xl mt-3">$2.20<span class="text-base font-normal text-gray-400">/mes</span></p>
+                <ul class="mt-8 space-y-3 text-gray-300">
+                    <li class="border-b border-borde pb-2">💻 <strong>100% CPU</strong></li>
+                    <li class="border-b border-borde pb-2">⚡ <strong>2 GB DDR4</strong></li>
+                    <li>💾 5 GB SSD</li>
+                </ul>
+                <a href="https://buy.stripe.com/cNi00iatF7pud3j8O7dAk01" target="_blank" class="btn-morado block w-full mt-8 py-3 rounded-lg font-semibold text-center">Seleccionar</a>
+            </div>
+
+            <!-- Esqueleto -->
+            <div class="tarjeta-plan p-8 text-center">
+                <h3 class="text-xl font-bold">Esqueleto</h3>
+                <p class="texto-dorado text-3xl mt-3">$5.00<span class="text-base font-normal text-gray-400">/mes</span></p>
+                <ul class="mt-8 space-y-3 text-gray-300">
+                    <li class="border-b border-borde pb-2">💻 <strong>200% CPU</strong></li>
+                    <li class="border-b border-borde pb-2">⚡ <strong>4 GB DDR4</strong></li>
+                    <li>💾 10 GB SSD</li>
+                </ul>
+                <a href="https://buy.stripe.com/4gM8wObxJ5hm2oF5BVdAk02" target="_blank" class="btn-morado block w-full mt-8 py-3 rounded-lg font-semibold text-center">Seleccionar</a>
+            </div>
+
+            <!-- Golem -->
+            <div class="tarjeta-plan p-8 text-center">
+                <h3 class="text-xl font-bold">Golem</h3>
+                <p class="texto-dorado text-3xl mt-3">$9.00<span class="text-base font-normal text-gray-400">/mes</span></p>
+                <ul class="mt-8 space-y-3 text-gray-300">
+                    <li class="border-b border-borde pb-2">💻 <strong>300% CPU</strong></li>
+                    <li class="border-b border-borde pb-2">⚡ <strong>8 GB DDR4</strong></li>
+                    <li>💾 25 GB SSD</li>
+                </ul>
+                <a href="https://buy.stripe.com/fZu5kCcBNeRW5ARc0jdAk03" target="_blank" class="btn-morado block w-full mt-8 py-3 rounded-lg font-semibold text-center">Seleccionar</a>
+            </div>
+
+            <!-- Wither (Destacado) -->
+            <div class="tarjeta-plan p-8 text-center destacado relative">
+                <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-dorado text-fondo px-4 py-1 rounded-full text-sm font-bold">RECOMENDADO</span>
+                <h3 class="text-xl font-bold mt-3">Wither</h3>
+                <p class="texto-dorado text-3xl mt-3">$18.00<span class="text-base font-normal text-gray-400">/mes</span></p>
+                <ul class="mt-8 space-y-3 text-gray-300">
+                    <li class="border-b border-borde pb-2">💻 <strong>400% CPU</strong></li>
+                    <li class="border-b border-borde pb-2">⚡ <strong>16 GB DDR4</strong></li>
+                    <li>💾 50 GB SSD</li>
+                </ul>
+                <a href="https://buy.stripe.com/8x2aEW31d5hmgfv8O7dAk04" target="_blank" class="btn-dorado block w-full mt-8 py-3 rounded-lg text-center">Seleccionar</a>
+            </div>
+
+            <!-- Dragón -->
+            <div class="tarjeta-plan p-8 text-center">
+                <h3 class="text-xl font-bold">Dragón</h3>
+                <p class="texto-dorado text-3xl mt-3">$30.00<span class="text-base font-normal text-gray-400">/mes</span></p>
+                <ul class="mt-8 space-y-3 text-gray-300">
+                    <li class="border-b border-borde pb-2">💻 <strong>600% CPU</strong></li>
+                    <li class="border-b border-borde pb-2">⚡ <strong>24 GB DDR4</strong></li>
+                    <li>💾 100 GB SSD</li>
+                </ul>
+                <a href="https://buy.stripe.com/00w14mdFReRW6EV7K3dAk05" target="_blank" class="btn-morado block w-full mt-8 py-3 rounded-lg font-semibold text-center">Seleccionar</a>
             </div>
         </div>
-        <!-- Menú móvil -->
-        <div id="menuMovil" class="md:hidden hidden bg-tarjeta/95 border-t border-borde">
-            <div class="container mx-auto px-4 py-4 flex flex-col gap-4">
-                <a href="#inicio" class="py-2 border-b border-gray-800 hover:text-textoClaro">Inicio</a>
-                <a href="#planes" class="py-2 border-b border-gray-800 hover:text-textoClaro">Planes</a>
-                <a href="#caracteristicas" class="py-2 border-b border-gray-800 hover:text-textoClaro">Características</a>
-                <a href="#faq" class="py-2 border-b border-gray-800 hover:text-textoClaro">FAQ</a>
-                <a href="#" class="py-3 bg-primario text-center rounded-lg">Ingresar</a>
+    </div>
+</section>
+
+<!-- Características -->
+<section id="caract" class="py-20 px-6 bg-tarjeta">
+    <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-bold mb-14">¿Por qué confiar en <span class="texto-dorado">nosotros</span>?</h2>
+        <div class="grid md:grid-cols-3 gap-10">
+            <div class="p-6">
+                <h3 class="texto-dorado text-xl">⚡ Rendimiento Extremo</h3>
+                <p class="text-gray-400 mt-3">Hardware de última generación sin cuellos de botella</p>
+            </div>
+            <div class="p-6">
+                <h3 class="texto-dorado text-xl">🛡️ Protección Total</h3>
+                <p class="text-gray-400 mt-3">Anti-DDoS avanzada incluida en todos los planes</p>
+            </div>
+            <div class="p-6">
+                <h3 class="texto-dorado text-xl">📞 Soporte 24/7</h3>
+                <p class="text-gray-400 mt-3">Asistencia rápida y especializada siempre disponible</p>
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <!-- Sección Inicio / Hero -->
-    <section id="inicio" class="min-h-screen flex items-center justify-center pt-24 pb-16 px-4">
-        <div class="container mx-auto">
-            <div class="max-w-4xl mx-auto text-center space-y-10">
-                <div class="space-y-6">
-                    <h1 class="text-[clamp(2.4rem,5vw,4rem)] font-bold textoSombra">
-                        Tu Servidor de <span class="textoDegradado">Minecraft</span> al Máximo Rendimiento
-                    </h1>
-                    <p class="text-lg text-gray-400 max-w-2xl mx-auto">
-                        La mejor plataforma con tecnología de punta. <span class="text-acento">CPU por porcentaje</span>, <span class="text-textoClaro">Memoria DDR4</span> y <span class="text-peligro">Almacenamiento SSD</span>. ¡Tu servidor listo en segundos!
-                    </p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a href="#planes" class="px-10 py-4 bg-gradient-to-r from-primario to-primarioOscuro hover:shadow-xl hover:shadow-primario/30 rounded-xl text-lg font-semibold transition-all hover:-translate-y-1">
-                        Ver Planes <i class="fa fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="#caracteristicas" class="px-10 py-4 bg-transparent border-2 border-primario/40 hover:border-acento hover:text-acento rounded-xl text-lg font-semibold transition-all">
-                        ¿Por qué elegirnos?
-                    </a>
-                </div>
-                <div class="pt-12 flex justify-center items-center gap-8 opacity-70">
-                    <span class="emojiGrande animate-flotar">🧟</span>
-                    <span class="emojiGrande animate-flotar" style="animation-delay: 0.5s">💀</span>
-                    <span class="emojiGrande animate-flotar" style="animation-delay: 1s">🗿</span>
-                    <span class="emojiGrande animate-flotar" style="animation-delay: 1.5s">☠️</span>
-                    <span class="emojiGrande animate-flotar" style="animation-delay: 2s">🐉</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- Pie -->
+<footer class="py-12 text-center border-t border-borde">
+    <p class="text-lg"><span class="texto-dorado">FlowHosting</span> © 2026 — <strong class="text-red-400">SIN REEMBOLSOS</strong></p>
+</footer>
 
-    <!-- Sección Planes -->
-    <section id="planes" class="py-24 bg-tarjeta/30">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <h2 class="text-[clamp(2rem,4vw,3rem)] font-bold textoDegradado">Nuestros Planes</h2>
-                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Todos incluyen <strong class="text-acento">% de CPU</strong>, <strong class="text-textoClaro">DDR4</strong> y <strong class="text-peligro">SSD</strong> facturados por mes.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Plan Zombie -->
-                <div class="bg-tarjeta tarjetaPlan rounded-2xl p-8">
-                    <div class="text-center mb-6">
-                        <span class="emojiGrande">🧟</span>
-                        <h3 class="text-2xl font-bold mt-4 text-textoClaro">Zombie</h3>
-                    </div>
-                    <div class="text-center mb-8">
-                        <span class="text-4xl font-bold text-acento">$2.20</span>
-                        <span class="text-gray-400"> / mes</span>
-                    </div>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex justify-between items-center border-b border-borde pb-2">
-                            <span class="text-gray-300"><i class="fa fa-microchip text-primario mr-2"></i> CPU</span>
-                            <span class="font-semibold text-textoClaro">100% CPU</span>
-                        </li>
-                        <li class="flex justify-between items-center border-b border-borde pb-2">
-                            <span class="text-gray-300"><i class="fa fa-bolt text-acento mr-2"></i> RAM DDR4</span>
-                            <span class="font-semibold">2 GB</span>
-                        </li>
-                        <li class="flex justify-between items-center border-b border-borde pb-2">
-                            <span class="text-gray-300"><i class="fa fa-hdd-o text-peligro mr-2"></i> Almacenamiento</span>
-                            <span class="font-semibold">5 GB SSD</span>
-                        </li>
-                    </ul>
-                    <button class="w-full py-3 bg-gradient-to-r from-primario to-primarioOscuro hover:shadow-lg hover:shadow-primario/20 rounded-lg font-semibold transition-all">Elegir Plan</button>
+</body>
+</html>
+r from-primario to-primarioOscuro hover:shadow-lg hover:shadow-primario/20 rounded-lg font-semibold transition-all">Elegir Plan</button>
                 </div>
 
                 <!-- Plan Esqueleto -->
